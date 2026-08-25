@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>รวมระบบงานกลุ่ม ปจ.สมุทรสาคร</title>
+    
+    <!-- ดึงฟอนต์ Kanit จาก Google Fonts ให้ดูทันสมัยและอ่านง่าย -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- ดึง FontAwesome สำหรับใช้งานไอคอนสวยๆ -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- ดึง Tailwind CSS สำหรับจัดการเรื่องความสวยงาม (Styling) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- ตั้งค่าธีมสีเฉพาะของโปรเจกต์ (ธีมไปรษณีย์ไทย: แดง-ขาว) -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Kanit', 'sans-serif'],
+                    },
+                    colors: {
+                        thpost: {
+                            red: '#E51E25',     /* สีแดงไปรษณีย์ */
+                            darkred: '#C4161C', /* สีแดงเข้มเมื่อนำเมาส์ชี้ */
+                            bg: '#F5F7F9',      /* สีพื้นหลัง */
+                            gold: '#F8B038'     /* สีทองประดับ */
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* เอฟเฟกต์เพิ่มเติมเล็กน้อย */
+        body { background-color: #F5F7F9; }
+        .hover-card:hover .icon-box { transform: scale(1.1); }
+        .icon-box { transition: transform 0.3s ease; }
+        
+        /* เพิ่มคลาสสำหรับอนิเมชั่นขยับขึ้น-ลง (Float) */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+
+<body class="text-gray-800 antialiased min-h-screen flex flex-col">
+
+    <!-- Header Section -->
+    <header class="bg-thpost-red text-white shadow-lg relative overflow-hidden">
+        <!-- ลวดลายพื้นหลังตกแต่ง Header -->
+        <div class="absolute opacity-10 -right-10 -top-10 text-9xl">
+            <i class="fa-regular fa-envelope"></i>
+        </div>
+        
+        <div class="max-w-6xl mx-auto px-4 py-8 relative z-10 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between">
+            <div class="flex items-center gap-4">
+                <!-- ใส่แท็ก img สำหรับดึงรูปโลโก้ของคุณที่อยู่ในโฟลเดอร์เดียวกัน และใส่คลาส animate-float -->
+                <!-- หากรูปไม่แสดงชั่วคราวใน Preview จะแสดงภาพ placeholder แทน -->
+                <img src="logo-74000post.png" alt="Logo" class="w-16 h-16 rounded-full shadow-md border-2 border-white object-cover animate-float shrink-0" onerror="this.src='https://placehold.co/64x64/E51E25/ffffff?text=Logo'">
+                <div>
+                    <h1 class="text-2xl sm:text-3xl font-bold tracking-wide">รวมระบบงานกลุ่ม</h1>
+                    <p class="text-thpost-gold font-medium text-lg mt-1">ปจ.สมุทรสาคร</p>
+                </div>
+            </div>
+            <div class="mt-4 sm:mt-0 bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm text-sm border border-white/30 shadow-inner inline-block">
+                <i class="fa-solid fa-clock mr-2"></i>ระบบศูนย์กลางการปฏิบัติงาน
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow max-w-6xl mx-auto w-full px-4 py-10">
+        
+        <!-- หมวดหมู่: ระบบบันทึกข้อมูล -->
+        <div class="mb-12">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-1.5 h-6 bg-thpost-red rounded-full"></div>
+                <h2 class="text-xl font-bold text-gray-800">ส่วนที่ 1: ระบบบันทึกข้อมูล (Data Entry)</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Card 1: ข้อมูลรถยนต์ขนส่ง -->
+                <a href="https://ais-pre-7czpdk5lmc26c4knblfmz5-626834699622.asia-southeast1.run.app" target="_blank" 
+                   class="hover-card group bg-white rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-100 overflow-hidden relative flex flex-col h-full">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-thpost-red"></div>
+                    <div class="p-6 flex flex-col items-center text-center flex-grow">
+                        <div class="icon-box w-20 h-20 bg-red-50 text-thpost-red rounded-2xl flex items-center justify-center text-3xl mb-4 group-hover:bg-thpost-red group-hover:text-white shadow-sm border border-red-100">
+                            <i class="fa-solid fa-truck-fast"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 group-hover:text-thpost-red transition-colors">บันทึกข้อมูลรถยนต์ขนส่ง</h3>
+                        <p class="text-sm text-gray-500 mt-2">ระบบบันทึกและการจัดการข้อมูลรถยนต์ขนส่งไปรษณีย์</p>
+                    </div>
+                    <div class="bg-gray-50 py-3 px-6 text-sm text-gray-500 border-t border-gray-100 flex justify-between items-center group-hover:bg-red-50 transition-colors">
+                        <span>เปิดใช้งาน</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-thpost-red"></i>
+                    </div>
+                </a>
+
+                <!-- Card 2: ข้อมูลรายได้ประจำวัน -->
+                <a href="https://forms.gle/iCi5Up2zAhMbdFLfA" target="_blank" 
+                   class="hover-card group bg-white rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-100 overflow-hidden relative flex flex-col h-full">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-thpost-red"></div>
+                    <div class="p-6 flex flex-col items-center text-center flex-grow">
+                        <div class="icon-box w-20 h-20 bg-red-50 text-thpost-red rounded-2xl flex items-center justify-center text-3xl mb-4 group-hover:bg-thpost-red group-hover:text-white shadow-sm border border-red-100">
+                            <i class="fa-solid fa-hand-holding-dollar"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 group-hover:text-thpost-red transition-colors">บันทึกข้อมูลรายได้ประจำวัน</h3>
+                        <p class="text-sm text-gray-500 mt-2">ฟอร์มสำหรับบันทึกข้อมูลและนำส่งรายได้ในแต่ละวัน</p>
+                    </div>
+                    <div class="bg-gray-50 py-3 px-6 text-sm text-gray-500 border-t border-gray-100 flex justify-between items-center group-hover:bg-red-50 transition-colors">
+                        <span>เปิดใช้งาน Google Forms</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-thpost-red"></i>
+                    </div>
+                </a>
+
+                <!-- Card 3: ข้อมูลจดหมายธรรมดา -->
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSf4AvOENKhJAFE7TK_Nx0exUOd5PPNHVc6-inbinwrXHcvWOw/viewform?usp=sharing&ouid=100700958276878831643" target="_blank" 
+                   class="hover-card group bg-white rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-100 overflow-hidden relative flex flex-col h-full">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-thpost-red"></div>
+                    <div class="p-6 flex flex-col items-center text-center flex-grow">
+                        <div class="icon-box w-20 h-20 bg-red-50 text-thpost-red rounded-2xl flex items-center justify-center text-3xl mb-4 group-hover:bg-thpost-red group-hover:text-white shadow-sm border border-red-100">
+                            <i class="fa-regular fa-envelope-open"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 group-hover:text-thpost-red transition-colors">บันทึกข้อมูลจดหมายธรรมดา</h3>
+                        <p class="text-sm text-gray-500 mt-2">ฟอร์มบันทึกรายละเอียดปริมาณงานจดหมายธรรมดา</p>
+                    </div>
+                    <div class="bg-gray-50 py-3 px-6 text-sm text-gray-500 border-t border-gray-100 flex justify-between items-center group-hover:bg-red-50 transition-colors">
+                        <span>เปิดใช้งาน Google Forms</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-thpost-red"></i>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- หมวดหมู่: ระบบรายงาน/สรุปผล -->
+        <div>
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-1.5 h-6 bg-thpost-gold rounded-full"></div>
+                <h2 class="text-xl font-bold text-gray-800">ส่วนที่ 2: ระบบรายงานและสรุปผล (Dashboards)</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Card 4: สรุปรายได้ประจำวัน -->
+                <a href="https://revenue74000.vercel.app/" target="_blank" 
+                   class="hover-card group bg-white rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-100 overflow-hidden relative flex flex-col h-full">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-thpost-gold"></div>
+                    <div class="p-6 flex flex-col items-center text-center flex-grow">
+                        <div class="icon-box w-20 h-20 bg-yellow-50 text-yellow-600 rounded-2xl flex items-center justify-center text-3xl mb-4 group-hover:bg-thpost-gold group-hover:text-white shadow-sm border border-yellow-100">
+                            <i class="fa-solid fa-chart-pie"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 group-hover:text-yellow-600 transition-colors">สรุปข้อมูลรายได้ประจำวัน</h3>
+                        <p class="text-sm text-gray-500 mt-2">แดชบอร์ดแสดงผลและสรุปยอดรายได้ประจำวันของกลุ่มฯ</p>
+                    </div>
+                    <div class="bg-gray-50 py-3 px-6 text-sm text-gray-500 border-t border-gray-100 flex justify-between items-center group-hover:bg-yellow-50 transition-colors">
+                        <span>เปิดใช้งาน Dashboard</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-yellow-600"></i>
+                    </div>
+                </a>
+
+                <!-- Card 5: สรุปจดหมายธรรมดา -->
+                <a href="https://docs.google.com/spreadsheets/d/1g9FPF__ghhDX8rOFJUnjW5khK4w-ADtZVZhYaZpDoi0/edit?usp=sharing" target="_blank" 
+                   class="hover-card group bg-white rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-gray-100 overflow-hidden relative flex flex-col h-full">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-thpost-gold"></div>
+                    <div class="p-6 flex flex-col items-center text-center flex-grow">
+                        <div class="icon-box w-20 h-20 bg-green-50 text-green-600 rounded-2xl flex items-center justify-center text-3xl mb-4 group-hover:bg-green-600 group-hover:text-white shadow-sm border border-green-100">
+                            <i class="fa-solid fa-file-excel"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-gray-800 group-hover:text-green-600 transition-colors">สรุปข้อมูลจดหมายธรรมดา</h3>
+                        <p class="text-sm text-gray-500 mt-2">ตารางสรุปปริมาณงานจดหมายธรรมดา (Google Sheets)</p>
+                    </div>
+                    <div class="bg-gray-50 py-3 px-6 text-sm text-gray-500 border-t border-gray-100 flex justify-between items-center group-hover:bg-green-50 transition-colors">
+                        <span>เปิดใช้งาน Google Sheets</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-green-600"></i>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-white border-t border-gray-200 mt-12 py-6">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <p class="text-gray-500 text-sm">
+                &copy; 2026 ระบบรวมลิงก์ภายในกลุ่ม ปจ.สมุทรสาคร (Thailand Post) <br class="sm:hidden" />
+                <span class="hidden sm:inline"> | </span> ออกแบบและพัฒนาเพื่อการใช้งานภายในองค์กร
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
