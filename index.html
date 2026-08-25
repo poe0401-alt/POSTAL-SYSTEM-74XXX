@@ -41,6 +41,15 @@
         body { background-color: #F5F7F9; }
         .hover-card:hover .icon-box { transform: scale(1.1); }
         .icon-box { transition: transform 0.3s ease; }
+        
+        /* เพิ่มคลาสสำหรับอนิเมชั่นขยับขึ้น-ลง (Float) */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
     </style>
 </head>
 
@@ -55,9 +64,9 @@
         
         <div class="max-w-6xl mx-auto px-4 py-8 relative z-10 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between">
             <div class="flex items-center gap-4">
-                <div class="bg-white text-thpost-red p-3 rounded-full shadow-md w-16 h-16 flex items-center justify-center text-3xl shrink-0">
-                    <i class="fa-solid fa-signs-post"></i>
-                </div>
+                <!-- ใส่แท็ก img สำหรับดึงรูปโลโก้ของคุณที่อยู่ในโฟลเดอร์เดียวกัน และใส่คลาส animate-float -->
+                <!-- หากรูปไม่แสดงชั่วคราวใน Preview จะแสดงภาพ placeholder แทน -->
+                <img src="logo-74000post.png" alt="Logo" class="w-16 h-16 rounded-full shadow-md border-2 border-white object-cover animate-float shrink-0" onerror="this.src='https://placehold.co/64x64/E51E25/ffffff?text=Logo'">
                 <div>
                     <h1 class="text-2xl sm:text-3xl font-bold tracking-wide">รวมระบบงานกลุ่ม</h1>
                     <p class="text-thpost-gold font-medium text-lg mt-1">ปจ.สมุทรสาคร</p>
